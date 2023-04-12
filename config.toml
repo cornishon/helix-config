@@ -1,0 +1,42 @@
+theme = "github_dark"
+
+[editor]
+line-number = "relative"
+completion-trigger-len = 1
+
+[editor.soft-wrap]
+enable = false
+
+[editor.lsp]
+display-inlay-hints = true
+
+[editor.statusline]
+right = ["version-control", "diagnostics", "selections", "position", "file-encoding"]
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[keys.normal]
+S = ["extend_line_below", "delete_selection", "open_above"]
+C = ["ensure_selections_forward", "extend_to_line_end", "change_selection"]
+D = ["ensure_selections_forward", "kill_to_line_end"]
+X = "extend_line_above"
+
+"A-l" = "select_next_sibling"
+"A-h" = "select_prev_sibling"
+"A-j" = "copy_selection_on_next_line"
+"A-k" = "copy_selection_on_prev_line"
+"A-b" = "extend_prev_word_start"
+"A-w" = "extend_next_word_start"
+"A-e" = "extend_next_word_end"
+"A-i" = "select_textobject_inner"
+"A-a" = "select_textobject_around"
+"A-f" = "expand_selection"
+"A-v" = "shrink_selection"
+"A-n" = ["search_selection", "extend_search_next"]
+"A-p" = ["search_selection", "extend_search_prev"]
+
+"space" = { w = ":write", q = ":q", Q = ":xa", "space" = ["add_newline_above", "add_newline_below"]}
+
