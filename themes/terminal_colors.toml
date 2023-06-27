@@ -1,0 +1,7 @@
+inherits = "base16_terminal"
+
+constructor = "light-yellow"
+type = "yellow"
+"diagnostic.info" = "gray"
+"ui.virtual.inlay-hint" = { fg = "gray", modifiers = [] }
+punctuation = { fg = "light-gray" }

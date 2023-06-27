@@ -1,8 +1,10 @@
-theme = "github_dark"
+# theme = "terminal_colors"
+theme = "rust"
 
 [editor]
 line-number = "relative"
 completion-trigger-len = 1
+idle-timeout = 100
 
 [editor.soft-wrap]
 enable = false
@@ -24,19 +26,15 @@ C = ["ensure_selections_forward", "extend_to_line_end", "change_selection"]
 D = ["ensure_selections_forward", "kill_to_line_end"]
 X = "extend_line_above"
 
-"A-l" = "select_next_sibling"
-"A-h" = "select_prev_sibling"
-"A-j" = "copy_selection_on_next_line"
-"A-k" = "copy_selection_on_prev_line"
-"A-b" = "extend_prev_word_start"
-"A-w" = "extend_next_word_start"
-"A-e" = "extend_next_word_end"
-"A-i" = "select_textobject_inner"
-"A-a" = "select_textobject_around"
-"A-f" = "expand_selection"
-"A-v" = "shrink_selection"
-"A-n" = ["search_selection", "extend_search_next"]
-"A-p" = ["search_selection", "extend_search_prev"]
+"C-j" = "copy_selection_on_next_line"
+"C-k" = "copy_selection_on_prev_line"
+"C-n" = ["search_selection", "extend_search_next"]
+"C-p" = ["search_selection", "extend_search_prev"]
+"C-s" = ":write"
 
-"space" = { w = ":write", q = ":q", Q = ":xa", "space" = ["add_newline_above", "add_newline_below"]}
+[keys.normal.space]
+q = ":q"
+Q = ":xa"
+"space" = ["add_newline_above", "add_newline_below"]
+l = { h = ":toggle-option lsp.display-inlay-hints" }
 

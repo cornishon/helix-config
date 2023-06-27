@@ -1,0 +1,8 @@
+inherits = "darcula-solid"
+
+"keyword" = "purple"
+"special" = "darkgreen"
+"function.macro" = "lightblue"
+"variable" = { fg = "white", modifiers = ["italic"] }
+
+"ui.background" = "#20201d"
