@@ -1,40 +1,79 @@
-# theme = "terminal_colors"
-theme = "rust"
+theme = 'ayu_transparent'
+
+[editor.cursor-shape]
+normal = "block"
+insert = "bar"
+select = "underline"
 
 [editor]
+idle-timeout = 50
+scrolloff = 5
 line-number = "relative"
-completion-trigger-len = 1
-idle-timeout = 100
-
-[editor.soft-wrap]
-enable = false
 
 [editor.lsp]
 display-inlay-hints = true
 
-[editor.statusline]
-right = ["version-control", "diagnostics", "selections", "position", "file-encoding"]
+[keys.normal.space.l]
+i = ":toggle-option lsp.display-inlay-hints"
 
-[editor.cursor-shape]
-insert = "bar"
-normal = "block"
-select = "underline"
+[keys.normal."'"]
+# g = ":sh zellij action new-tab -l lg"
+g = ":sh zellij run -fc -- lazygit"
+t = ":sh zellij run -f -- cargo test"
+r = ":sh zellij run -f -- cargo run"
+f = ":sh zellij run -fc -- yazi"
+
+# [keys.insert]
+# esc = ["collapse_selection", "keep_primary_selection", "normal_mode"]
 
 [keys.normal]
-S = ["extend_line_below", "delete_selection", "open_above"]
-C = ["ensure_selections_forward", "extend_to_line_end", "change_selection"]
-D = ["ensure_selections_forward", "kill_to_line_end"]
-X = "extend_line_above"
+# esc = ["collapse_selection", "keep_primary_selection"]
+C-s = ":write"
+C-r = ":reload"
 
-"C-j" = "copy_selection_on_next_line"
-"C-k" = "copy_selection_on_prev_line"
-"C-n" = ["search_selection", "extend_search_next"]
-"C-p" = ["search_selection", "extend_search_prev"]
-"C-s" = ":write"
+"*" = ["search_selection", "select_mode"]
 
-[keys.normal.space]
-q = ":q"
-Q = ":xa"
-"space" = ["add_newline_above", "add_newline_below"]
-l = { h = ":toggle-option lsp.display-inlay-hints" }
+# Treesitter selections
+C-h = "select_prev_sibling"
+C-j = "select_next_sibling"
+C-k = "select_prev_sibling"
+C-l = "select_next_sibling"
 
+C-v = "copy_selection_on_next_line"
+C-V = "copy_selection_on_prev_line"
+
+"{" = ["goto_prev_paragraph", "collapse_selection"]
+"}" = ["goto_next_paragraph", "collapse_selection"]
+0 = "goto_line_start"
+"$" = "goto_line_end"
+"^" = "goto_first_nonwhitespace"
+V = ["select_mode", "extend_to_line_bounds"]
+C = ["kill_to_line_end", "insert_mode"]
+A-C = ["kill_to_line_start", "insert_mode"]
+D = "kill_to_line_end"
+A-D = "kill_to_line_start"
+S = ["extend_to_line_bounds", "delete_selection", "open_above"]
+
+x = ["extend_to_line_bounds", "select_mode"]
+
+# g.s = "extend_to_first_nonwhitespace"
+# g.h = "extend_to_line_start"
+# g.l = "extend_to_line_end"
+
+[keys.select]
+"{" = ["goto_prev_paragraph", "collapse_selection"]
+"}" = ["goto_next_paragraph", "collapse_selection"]
+0 = "goto_line_start"
+"$" = "goto_line_end"
+"^" = "goto_first_nonwhitespace"
+G = "goto_file_end"
+V = ["select_mode", "extend_to_line_bounds"]
+C = ["kill_to_line_end", "insert_mode"]
+A-C = ["kill_to_line_start", "insert_mode"]
+D = "kill_to_line_end"
+A-D = "kill_to_line_start"
+S = ["extend_to_line_bounds", "delete_selection", "open_above"]
+
+k = ["extend_line_up", "extend_to_line_bounds"]
+j = ["extend_line_down", "extend_to_line_bounds"]
+esc = ["collapse_selection", "keep_primary_selection", "normal_mode"]
