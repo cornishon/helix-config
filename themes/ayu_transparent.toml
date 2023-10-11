@@ -1,0 +1,13 @@
+inherits = 'ayu_dark'
+
+variable = "#dedede"
+constructor = "magenta"
+"label" = { fg = "yellow", modifiers = ["italic"] }
+"keyword.special" = "red"
+"keyword.control" = { fg = "orange", modifiers = ["italic"] }
+"diagnostic.warning" = { underline = { style = "line", color = "orange" } }
+"diagnostic.error" = { underline = { style = "line", color = "red" } }
+
+"ui.background" = {}
+"ui.virtual.inlay-hint" = { bg = "#000000", fg = "cyan", modifiers = ["dim"] }
+"ui.virtual.inlay-hint.parameter" = { bg = "#000000", fg = "white", modifiers = ["dim"] }
